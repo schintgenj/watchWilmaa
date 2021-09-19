@@ -60,7 +60,7 @@ while read -r line; do
     fi
 done < <(echo "$originalPlaylist")
 
-redirectURL=$(echo "$header" | grep Location | head -n 1 | cut '-d ' '-f2')
+redirectURL=$(echo "$header" | grep -i Location | head -n 1 | cut '-d ' '-f2')
 
 if [ -z $redirectURL ] ; then
         echo "Connection error, exiting..."
